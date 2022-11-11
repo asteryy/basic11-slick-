@@ -1,0 +1,181 @@
+@charset "UTF-8";
+
+*{margin: 0; padding: 0;}
+img{width: 100%;}
+.clear:after{content: ""; clear: both; display: block;}  /* 자식이 옆으로 정렬(float)하면 부모가 자식의 높이를 인식하지 못하므로 약을 줘야 함 */
+
+body{background-color: black;}
+.전체{width: 1000px; margin: auto; /* margin: auto(= 0 auto) 는 중앙으로 */
+      padding-top: 50px;
+      background-color: gray;
+      }  
+
+.전체 .첫째{position: relative; color: white;}
+.전체 .첫째 .icon{position: absolute;
+                 right: 20px; top: 10px;
+                 z-index: 100;}
+
+.전체 .첫째 .제목{
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 100;
+    background-color: rgba(255,255,255,0.5);   /* 마지막 0.5는 투명도 50%를 뜻함 */
+    padding: 10px 30px;
+    border-radius: 15px;
+}
+
+.slickWrap{height: 445px; overflow: hidden;}
+
+.slickWrap .slick-prev{
+    position: absolute;
+    left: 0; top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    visibility: hidden;
+    font-size: 0;
+}
+
+.slickWrap .slick-prev:after{
+    content: "\f0a8";                            /* 아이콘 {content: "\f053", "\f054"} 잘 쓰임 */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    visibility: visible;
+    font-size: 35px;
+    color: white;
+    text-shadow: 0 0 6px black;
+}
+
+.slickWrap .slick-next{
+    position: absolute;
+    right: 0; top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    visibility: hidden;
+    font-size: 0;
+}
+
+.slickWrap .slick-next:after{
+    content: "\f0a9";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    visibility: visible;
+    font-size: 35px;
+    color: white;
+    text-shadow: 0 0 6px black;
+}
+
+.전체 .둘째{background-color: mediumslateblue; padding: 10px;}
+.전체 .둘째 .둘자손{
+    float: left;
+    width: 23.5%; height: 300px;
+    margin-right: 2%;}
+.전체 .둘째 .둘자식1{background-color: yellow;}
+.전체 .둘째 .둘자식2{background-color: green;}
+.전체 .둘째 .둘자식3{background-color: skyblue;}
+.전체 .둘째 .둘자식4{
+    background-color: lightpink;
+    margin-right: 0;
+    box-sizing: border-box;}
+.전체 .둘째 .둘자식4 .slick-track{height: 300px;}
+
+.전체 .둘째 .둘자식4 .slick-dots{
+    position: absolute;
+    left: 0; bottom: 0; width: 100%;
+    text-align: center;
+}
+
+.전체 .둘째 .둘자식4 .slick-dots li{
+    display: inline;
+    margin: 0 5px;
+}
+
+.전체 .셋째{
+    background-color: orchid;
+    padding: 20px;
+    text-align: center;      /* text-align: center는 블록요소에만 적용가능. 셋째영역이나 셋자손에 적용해도 됨 */
+    line-height: 200px;
+}
+.전체 .셋째 .셋째영역{
+    background-color: navy;
+    padding: 20px;
+    width: 900px;
+    box-sizing: border-box;   /* 넓이 900안에 패딩이 들어오게 */
+    margin: auto;             /* 내 영역 안에서 가운데 정렬시키기 */
+    border: 2px solid red;  /* border: 두께 스타일 칼라 */
+}
+.전체 .셋째 .셋자손{
+    float: left; height: 200px;
+    width: 32%;
+    margin-right: 2%;
+    }
+.전체 .셋째 .셋자식1{
+    background-color: coral;}
+.전체 .셋째 .셋자식2{
+    background-color: aqua;}
+.전체 .셋째 .셋자식3{
+    background-color: olive;
+    margin-right: 0%;}
+
+.전체 .넷째{
+    background-color: antiquewhite;
+    width: 900px;
+    margin: auto;
+    margin-top: 30px;
+    padding: 20px;
+    box-sizing: border-box;   /* 패딩 크기까지 900안에 들어가게 만듦. */
+}
+.전체 .넷째 .넷자손{
+    background-color: cadetblue;
+    width: 23.5%;
+    margin-right: 2%;
+    float: left;
+    height: 200px;
+}
+.전체 .넷째 .넷자식1{}
+.전체 .넷째 .넷자식2{}
+.전체 .넷째 .넷자식3{}
+.전체 .넷째 .넷자식4{margin-right: 0%;}
+
+.전체 .다섯째{
+    background-color:green;
+    width: 900px;
+    margin: auto;
+    margin-top: 30px;                /*  margin-top이 margin:auto보다 뒤에 적혀야 함 */
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center; line-height: 200px;     /* 글자 정중앙 정렬 */
+}
+.전체 .다섯째 .다자손{
+    background-color: salmon;
+    width: 45%;
+    margin-right: 10%;
+    float: left;
+    height: 200px;
+    }
+.전체 .다섯째 .다자식1{
+    }
+.전체 .다섯째 .다자식2{
+    margin-right: 0%;
+    }
+
+
+.전체 .여섯째{
+    width: 900px;
+    background-color: aquamarine;
+    margin: auto;
+    margin-top: 30px;
+
+}
+.전체 .여섯째 .여손자{
+    background-color: lavender;
+    width: 18.4%; height: 200px;
+    float: left;
+    margin-right: 2%;}
+.전체 .여섯째 .여손자.여자식1{}
+.전체 .여섯째 .여손자.여자식2{}
+.전체 .여섯째 .여손자.여자식3{}
+.전체 .여섯째 .여손자.여자식4{}
+.전체 .여섯째 .여손자.여자식5{
+    margin-right: 0%;
+}
